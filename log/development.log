@@ -280,3 +280,91 @@ Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-06-17 15:46:2
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
 Completed in 54ms (View: 3, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090618010853)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090618010853')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("topics")[0m
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-06-17 18:12:02) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/topics_controller.rb:1
+
+Rendered rescues/_trace (93.1ms)
+Rendered rescues/_request_and_response (3.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-06-17 18:13:29) [GET]
+
+ActionController::RoutingError (No route matches "/meetings" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-06-17 18:15:26) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/topics_controller.rb:1
+
+Rendered rescues/_trace (93.1ms)
+Rendered rescues/_request_and_response (3.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-17 18:24:30) [GET]
+  [4;36;1mTopic Load (0.9ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 66ms (View: 44, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2009-06-17 18:24:35) [GET]
+Rendering template within layouts/topics
+Rendering topics/new
+Completed in 44ms (View: 20, DB: 0) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#create (for 127.0.0.1 at 2009-06-17 18:25:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"wJZziW5M6g/Hj3aAel5e3oD7OfbpBlG4NXxGgxxLaMI=", "topic"=>{"title"=>"Rails 2.3 update", "description"=>"application.rb change to application_controller.rb"}}
+  [4;35;1mTopic Create (0.7ms)[0m   [0mINSERT INTO "topics" ("created_at", "title", "updated_at", "description") VALUES('2009-06-18 01:25:04', 'Rails 2.3 update', '2009-06-18 01:25:04', 'application.rb change to application_controller.rb')[0m
+Redirected to http://localhost:3000/topics/1
+Completed in 68ms (DB: 1) | 302 Found [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-17 18:25:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 1) [0m
+Rendering template within layouts/topics
+Rendering topics/show
+Completed in 40ms (View: 14, DB: 1) | 200 OK [http://localhost/topics/1]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-17 18:25:08) [GET]
+  [4;35;1mTopic Load (0.9ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Completed in 35ms (View: 13, DB: 1) | 200 OK [http://localhost/topics]
