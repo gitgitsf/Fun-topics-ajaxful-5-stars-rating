@@ -2,15 +2,17 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
+    <th>Title</th>   
+	<!--  <th>Description</th> -->
+   
   </tr>
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%=h topic.title %></td>
+    <td><%= link_to h(topic.title), topic  %></td>
     <td><%=h topic.description %></td>
-    <td><%= link_to 'Show', topic %></td>
+    <td><%= button_to '+1', topic_votes_path(topic) %></td>
+   <%#= link_to 'Show', topic %> 
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
