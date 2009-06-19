@@ -4,12 +4,12 @@
   
   has <span class ="show_votes_num">  <%= pluralize( @topic.votes.size, "vote") %>. </span>
 </p>
-<!-- 
+ 
 <p>
   <b>Description:</b>
   <%=h @topic.description %>
 </p>
--->
+ 
  
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
