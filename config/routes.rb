@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   # map.resources :votes
 
   map.resources :topics, :has_many => :votes
-
+                                             
+ map.connect '/', :controller => 'topics', :action => 'index'   
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

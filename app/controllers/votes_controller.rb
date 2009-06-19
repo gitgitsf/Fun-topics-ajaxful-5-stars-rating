@@ -1,8 +1,12 @@
 class VotesController < ApplicationController  
+               
+  before_filter :authenticated?
   
    def create
     @topic = Topic.find(params[:topic_id])
-    @vote = @topic.votes.create!
+    # @vote = @topic.votes.create!
+    @vote = @topic.votes.build(params[:vote]) 
+    @vote.user = current_user
     
     respond_to do |wants|
       if @vote.save
@@ -22,5 +26,14 @@ class VotesController < ApplicationController
      @vote.destroy
      redirect_to(topics_url)
    end
-   
+           
+   def authenticated?
+      if !logged_in?
+        flash[:notice] = "You must login to do that"
+        #redirect_to root_path
+        redirect_to topics_path   #mt add: show user all topics after login
+        false
+      end 
+    end
+    
 end

@@ -1,0 +1,6 @@
+ <%# We only want login user to vote  %>
+<% if logged_in? %>
+  <%= button_to "+1", topic_votes_path(topic) %> 
+<% end %>
+     
+ <%= pluralize(topic.votes.size, "vote") %>

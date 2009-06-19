@@ -3,16 +3,23 @@
 <table>
   <tr>
     <th>Title</th>   
-	<!--  <th>Description</th> -->
+    <th>Description</th> 
    
   </tr>
 
 <% @topics.each do |topic| %>
-  <tr>
+  <tr class="<%= cycle('list-line-odd', 'list-line-even')%>">
     <td><%= link_to h(topic.title), topic  %></td>
-    <td><%=h topic.description %></td>
-    <td><%= button_to '+1', topic_votes_path(topic) %></td>
-   <%#= link_to 'Show', topic %> 
+    <td>           
+       <%=h(truncate(topic.description, 20)) %> 
+    </td>    
+    <td>  
+	<!-- move it to partial -->
+   <%#= button_to '+1', topic_votes_path(topic) %>   
+    <%= render :partial => "vote", :locals => {:topic => topic} %>
+   </td>
+   <%#= link_to 'Show', topic %>   
+
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

@@ -1,7 +1,8 @@
 <p>
   <b>Title:</b>
-  <%=h @topic.title %>  
-  has <%= @topic.votes.size %> votes.
+  <%=h @topic.title %>   
+  
+  has <span class ="show_votes_num">  <%= pluralize( @topic.votes.size, "vote") %>. </span>
 </p>
 <!-- 
 <p>
