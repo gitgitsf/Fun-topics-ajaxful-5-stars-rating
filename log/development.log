@@ -4838,3 +4838,56 @@ DEPRECATION WARNING: truncate takes an option hash instead of separate length an
   [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 8) [0m
 Rendered topics/_vote (2.8ms)
 Completed in 139ms (View: 106, DB: 7) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-19 00:15:20) [GET]
+  [4;36;1mTopic Load (3.2ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/application
+Rendering topics/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Rendered topics/_vote (85.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 3) [0m
+Rendered topics/_vote (2.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 4) [0m
+Rendered topics/_vote (2.6ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 5) [0m
+Rendered topics/_vote (2.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 6) [0m
+Rendered topics/_vote (2.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 7) [0m
+Rendered topics/_vote (2.9ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47topics47index46html46erb at /Users/meewah12/rails_apps/fun/app/views/topics/index.html.erb:14)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 8) [0m
+Rendered topics/_vote (2.7ms)
+Completed in 289ms (View: 226, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-19 00:15:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-19 00:15:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering topics/show
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 62ms (View: 32, DB: 1) | 200 OK [http://localhost/topics/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-19 00:15:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
