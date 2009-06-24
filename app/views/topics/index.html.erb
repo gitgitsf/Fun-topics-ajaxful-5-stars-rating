@@ -9,14 +9,18 @@
 
 <% @topics.each do |topic| %>
   <tr class="<%= cycle('list-line-odd', 'list-line-even')%>">
-    <td><%= link_to h(topic.title), topic  %></td>
-    <td>           
-       <%=h(truncate(topic.description, 20)) %> 
-    </td>    
-    <td>  
-	<!-- move it to partial -->
-   <%#= button_to '+1', topic_votes_path(topic) %>   
-    <%= render :partial => "vote", :locals => {:topic => topic} %>
+    <td><%= link_to h(topic.title), topic  %></td>          
+    
+    <td class="td_topic_desc"> 
+	  <%= render :partial => "description", :object=>topic %>
+           
+    </td>  
+      
+
+    <td>    
+     <!-- move it to partial -->
+     <%#= button_to '+1', topic_votes_path(topic) %>   
+     <%= render :partial => "vote", :locals => {:topic => topic} %>
    </td>
    <%#= link_to 'Show', topic %>   
 
@@ -25,6 +29,9 @@
   </tr>
 <% end %>
 </table>
+      
+  
+   
 
 <br />
 

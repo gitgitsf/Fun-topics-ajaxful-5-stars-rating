@@ -5,7 +5,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Topics: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %> 
+  <%= stylesheet_link_tag 'scaffold' %>    
+  <%= javascript_include_tag :defaults, :cache =>true %> 
 
   <% if logged_in? %>
        <%= link_to "Logout", logout_path %>    

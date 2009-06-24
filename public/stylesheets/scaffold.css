@@ -82,6 +82,9 @@ body {
 	margin-left: 200px;
     background: #FAFAD2;
 }
+.td_topic_desc {
+  width: 250px;
+}
 
 
 /*end of file */

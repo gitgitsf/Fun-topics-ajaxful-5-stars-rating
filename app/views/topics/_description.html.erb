@@ -1,0 +1,16 @@
+ 
+	    <div id ="topic_<%=object.id.to_s%>_toggle" >
+	
+	   	   <%= link_to_function('show') do |page|
+			      page.Effect.toggle("topic_#{object.id.to_s}", 'blind')
+			      page <<  "this.innerHTML = (this.innerHTML == 'show' ? 'hide' : 'show')"
+		    end %>
+	
+	    </div>  
+
+		<div id =  "topic_<%=object.id.to_s%>" width="100px"  style ="display:none">           
+         <%=h( object.description ) %>      
+       </div>
+            
+   </td>  
+      

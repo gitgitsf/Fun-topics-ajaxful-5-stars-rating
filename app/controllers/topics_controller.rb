@@ -81,5 +81,15 @@ class TopicsController < ApplicationController
       format.html { redirect_to(topics_url) }
       format.xml  { head :ok }
     end
-  end
+  end  
+  
+  
+  def show_description
+   
+     @description = Topic.find(params[:id]).description   
+     render :text =>   @description
+   
+   end
+   
+  
 end

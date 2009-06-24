@@ -1,0 +1,3 @@
+ 
+page.replace_html "topic_#{topic.id.to_s}", @description
+page.visual_effect :toggle_slide, "topic_#{topic.id.to_s}", :duration => 2
