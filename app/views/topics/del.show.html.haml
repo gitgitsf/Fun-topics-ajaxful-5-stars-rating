@@ -1,0 +1,20 @@
+%p
+  %b Title
+  = h(@topic.title)       
+  has                  
+  .show_votes_num=  @topic.votes.size   
+    
+  - if @topic.votes.size > 1        
+    = "votes"                        
+  - else
+    ='vote'                          
+                        
+%p
+  %b  Description:
+  = h(@topic.description)
+ 
+ 
+
+= link_to 'Edit', edit_topic_path(@topic)   |
+= link_to 'Back', topics_path      
+ 
