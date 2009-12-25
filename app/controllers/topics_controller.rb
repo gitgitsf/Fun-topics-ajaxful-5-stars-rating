@@ -90,6 +90,16 @@ class TopicsController < ApplicationController
      render :text =>   @description
    
    end
-   
+  
+  #for ajaxful rating         
+   def rate
+     @topic = Topic.find(params[:id])
+     @topic.rate(params[:stars], current_user, params[:dimension])
+     id = "ajaxful-rating-#{!params[:dimension].blank? ? "#{params[:dimension]}-" : ''}topic-#{@topic.id}"
+     render :update do |page|
+       page.replace_html id, ratings_for(@topic, :wrap => false, :dimension => params[:dimension])
+       page.visual_effect :highlight, id
+     end
+   end
   
 end

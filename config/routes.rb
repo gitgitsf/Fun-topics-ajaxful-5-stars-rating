@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # map.resources :votes
 
-  map.resources :topics, :has_many => :votes
+  map.resources :topics, :has_many => :votes     
+  map.resources :topics, :member => {:rate => :post}
                                              
  map.connect '/', :controller => 'topics', :action => 'index'   
   # The priority is based upon order of creation: first created -> highest priority.
